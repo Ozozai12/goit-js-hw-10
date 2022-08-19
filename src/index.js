@@ -49,7 +49,7 @@ function fetchCountries(name) {
 function renderList(countries) {
   return countries
     .map(country => {
-      return `<li><img src="${country.flags.svg}" width="40" height="40">${country.name.common}</li>`;
+      return `<li><img src="${country.flags.svg}" width="70"><span>${country.name.common}</span></li>`;
     })
     .join('');
 }
@@ -57,11 +57,11 @@ function renderList(countries) {
 function renderCountry(countries) {
   return countries
     .map(country => {
-      return `<img src="${country.flags.svg}" width="50">
-            <h1>${country.name.common}</h1>
-            <p>Capital: ${country.capital}</p>
-            <p>Population: ${country.population}</p>
-            <p>Language: ${Object.values(country.languages)}</p>
+      return `<img src="${country.flags.svg}" width="90">
+            <h1>${country.name.common}</span></h1>
+            <p>Capital: <span>${country.capital}</span></p>
+            <p>Population: <span>${country.population}</span></p>
+            <p>Languages: <span>${Object.values(country.languages)}</span></p>
             `;
     })
     .join('');
