@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
 import './css/styles.css';
+import fetchCountries from './fetchCountries';
 
 var debounce = require('lodash.debounce');
 
@@ -35,16 +36,7 @@ function textInput() {
     });
 }
 
-function fetchCountries(name) {
-  return fetch(
-    `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
-  ).then(response => {
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
-    return response.json();
-  });
-}
+
 
 function renderList(countries) {
   return countries
